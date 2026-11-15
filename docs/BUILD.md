@@ -22,7 +22,8 @@
      - `SecurityAuditCLI.exe` — консольная версия;
      - `SecurityAudit.exe` — GUI-версия (`-H windowsgui`, без консольного окна);
    - **Smoke-тест**: запуск `-version`, аудита хоста и сканирования `127.0.0.1`;
-   - **Inno Setup** (`choco install innosetup`) → `Setup-Audit-Zashchity.exe`;
+   - **Inno Setup** (`choco install innosetup`) → `Setup-Audit-Zashchity.exe`
+     (мастер установки — на встроенном языке Inno Setup; интерфейс приложения — русский);
    - Публикация артефактов `OfficeSecurityCheck-windows` (установщик + exe + пример отчёта).
 
 3. **`release`** — при push тега `v*` создаётся GitHub Release с установщиком.

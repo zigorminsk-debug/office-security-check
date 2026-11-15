@@ -58,7 +58,13 @@
     CLI на Windows пройден, ресурсы exe собраны. ✗ на шаге ISCC (Inno Setup)
     без текста ошибки. Исправлено: `x64compatible` → `x64` в setup.iss,
     автопоиск ISCC.exe, вывод ошибок компилятора установщика в аннотации CI.
-19. **Запуск #4** — ожидается полная сборка setup.exe.
+19. **Запуск #4** ✗: ISCC сообщил через аннотации точную причину — в пакете
+    Inno Setup (choco) отсутствуют `Languages\*.isl`. Исправлено: секция
+    `[Languages]` удалена (встроенный язык Inno Setup).
+20. **Запуск #5** ✅ **полностью успешен**: verify ✓, сборка Windows ✓
+    (vet, тесты, ресурсы exe, SecurityAuditCLI.exe, SecurityAudit.exe,
+    smoke-тест аудита хоста и сканирования 127.0.0.1, Setup-Audit-Zashchity.exe
+    через Inno Setup), артефакты `OfficeSecurityCheck-windows` опубликованы.
 
 ### Организация обратной связи с CI
 
