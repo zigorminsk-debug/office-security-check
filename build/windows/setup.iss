@@ -22,8 +22,8 @@ SetupIconFile=app.ico
 Compression=lzma2/max
 SolidCompression=yes
 WizardStyle=modern
-ArchitecturesInstallIn64BitMode=x64compatible
-ArchitecturesAllowed=x64compatible
+ArchitecturesInstallIn64BitMode=x64
+ArchitecturesAllowed=x64
 PrivilegesRequired=admin
 UninstallDisplayName={#MyAppName}
 

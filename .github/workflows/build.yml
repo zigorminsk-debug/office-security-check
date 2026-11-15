@@ -128,7 +128,21 @@ jobs:
       - name: Сборка установщика setup.exe
         shell: pwsh
         run: |
-          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" /Qp /O"dist" /F"Setup-Audit-Zashchity" build\windows\setup.iss
+          $isd = @(
+            "C:\Program Files (x86)\Inno Setup 6\ISCC.exe",
+            "C:\Program Files\Inno Setup 6\ISCC.exe"
+          ) | Where-Object { Test-Path $_ } | Select-Object -First 1
+          if (-not $isd) {
+            Write-Output "::error title=ISCC::ISCC.exe не найден после установки Inno Setup"
+            exit 1
+          }
+          Write-Output "Используется: $isd"
+          $out = & $isd /Qp /O"dist" /F"Setup-Audit-Zashchity" build\windows\setup.iss 2>&1 | Tee-Object -Variable lines
+          $code = $LASTEXITCODE
+          if ($code -ne 0) {
+            $lines | Select-Object -First 40 | ForEach-Object { Write-Output "::error title=ISCC::$_" }
+            exit $code
+          }
           Get-ChildItem dist
 
       - name: Публикация артефактов сборки
