@@ -27,10 +27,6 @@ ArchitecturesAllowed=x64
 PrivilegesRequired=admin
 UninstallDisplayName={#MyAppName}
 
-[Languages]
-Name: "ru"; MessagesFile: "compiler:Languages\Russian.isl"
-Name: "en"; MessagesFile: "compiler:Languages\English.isl"
-
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 
