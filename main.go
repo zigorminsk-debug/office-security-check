@@ -59,7 +59,7 @@ func main() {
 }
 
 // runCLI выполняет сканирование и аудит в режиме командной строки.
-func runCLI(targets, profile model.ScanProfile, portSpec,
+func runCLI(targets string, profile model.ScanProfile, portSpec,
 	jsonOut, htmlOut, csvOut string, hostAuditOnly bool,
 	timeoutMS, workers int, skipDisc, udp bool) int {
 
