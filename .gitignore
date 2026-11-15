@@ -1,0 +1,17 @@
+# Локальный тулчейн и кэши сборки (не коммитятся)
+.toolchain/
+.gocache/
+.gopath/
+tmp/
+
+# Артефакты сборки
+dist/
+build/windows/out/
+*.syso
+*.exe
+*.zip
+*.json.tmp
+
+# Отчёты сканирования (содержат данные сети)
+reports/
+scan-report.*
