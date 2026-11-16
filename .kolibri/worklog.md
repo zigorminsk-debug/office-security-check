@@ -23,3 +23,10 @@
 - **Модель:** qwen3.6-colibri
 - **Сделано:** Fix go.mod to comply with build rules and remove duplicate/incorrect dependencies
 - **Файлы:** `~ go.mod`
+
+## 2026-11-16 16:10 UTC — Исправление сборки (попытка 3)
+
+- **Ошибка сборки:** ERROR: .\main.go:6:2: "image/color" imported and not used
+- **Модель:** qwen3.6-colibri
+- **Сделано:** Fix unused import and ensure GUI runs on Windows
+- **Файлы:** `~ main.go`
