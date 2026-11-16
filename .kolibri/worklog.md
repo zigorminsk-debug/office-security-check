@@ -9,3 +9,10 @@
 - **Сделано:** Add Go-based network scanner and vulnerability checker for Windows domain environments
 - **Файлы:** `+ go.mod`, `+ main.go`
 - **Итог:** сборка прошла — https://github.com/zigorminsk-debug/office-security-check/actions/runs/43825630792; релиз https://github.com/zigorminsk-debug/office-security-check/releases/tag/build-1
+
+## 2026-11-16 15:46 UTC — Задача
+
+- **Задача:** программа не стартует gui нет при нажатии на office-security-check.exe на 1 секунду мелькает окно и ничего дальше не происходит
+- **Модель:** qwen3.6-colibri
+- **Сделано:** Add GUI with fyne for office-security-check
+- **Файлы:** `~ go.mod`, `~ main.go`

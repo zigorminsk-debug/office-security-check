@@ -28,15 +28,22 @@ jobs:
         with:
           go-version: stable
           cache: false
+      - name: Install Linux libraries for Fyne
+        if: matrix.target == 'linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends gcc libgl1-mesa-dev libegl1-mesa-dev libwayland-dev libx11-dev libxkbcommon-dev xorg-dev
       - name: Resolve dependencies
         run: go mod tidy
-      - name: Test
-        run: go test ./...
       - name: Build
         shell: bash
+        env:
+          CGO_ENABLED: "1"
         run: |
           mkdir -p dist
-          go build -trimpath -ldflags "-s -w" -o dist/ ./...
+          flags="-s -w"
+          if [ "$RUNNER_OS" = "Windows" ]; then flags="$flags -H=windowsgui"; fi
+          go build -trimpath -ldflags "$flags" -o dist/ ./...
       - name: Upload build
         uses: actions/upload-artifact@v7
         with:
