@@ -30,3 +30,4 @@
 - **Модель:** qwen3.6-colibri
 - **Сделано:** Fix unused import and ensure GUI runs on Windows
 - **Файлы:** `~ main.go`
+- **Итог:** сборка прошла — https://github.com/zigorminsk-debug/office-security-check/actions/runs/43904575214; релиз https://github.com/zigorminsk-debug/office-security-check/releases/tag/build-4
