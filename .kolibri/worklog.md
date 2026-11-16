@@ -16,3 +16,10 @@
 - **Модель:** qwen3.6-colibri
 - **Сделано:** Add GUI with fyne for office-security-check
 - **Файлы:** `~ go.mod`, `~ main.go`
+
+## 2026-11-16 15:57 UTC — Исправление сборки (попытка 2)
+
+- **Ошибка сборки:** fatal: Cannot prompt because user interactivity has been disabled.
+- **Модель:** qwen3.6-colibri
+- **Сделано:** Fix go.mod to comply with build rules and remove duplicate/incorrect dependencies
+- **Файлы:** `~ go.mod`
